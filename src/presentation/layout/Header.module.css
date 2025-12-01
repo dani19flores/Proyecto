@@ -1,0 +1,43 @@
+.header {
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--spacing-xl);
+    background-color: var(--color-surface);
+    backdrop-filter: blur(var(--glass-blur));
+    border-bottom: var(--glass-border);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.iconBtn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--color-text-muted);
+}
+
+.iconBtn:hover {
+    color: var(--color-primary);
+    background-color: var(--color-surface-hover);
+}
+
+.langText {
+    font-size: 0.875rem;
+    font-weight: 600;
+}

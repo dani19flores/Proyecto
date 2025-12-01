@@ -1,0 +1,57 @@
+.kpiCard {
+    min-height: 140px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    height: 100%;
+    justify-content: center;
+}
+
+.title {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+    margin: 0;
+}
+
+.value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.2;
+}
+
+.trend {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.period {
+    color: var(--color-text-muted);
+    font-weight: 400;
+    margin-left: var(--spacing-xs);
+}
+
+.trendUp {
+    color: var(--color-success);
+}
+
+.trendDown {
+    color: var(--color-danger);
+}
+
+.trendNeutral {
+    color: var(--color-secondary);
+}
+
+.iconUp,
+.iconDown,
+.iconNeutral {
+    stroke-width: 2.5px;
+}

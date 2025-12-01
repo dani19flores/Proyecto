@@ -1,0 +1,57 @@
+.gridContainer {
+    width: 100%;
+}
+
+.gridItem {
+    position: relative;
+    height: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 2px dashed var(--color-primary);
+    border-radius: var(--radius-lg);
+    z-index: 10;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: var(--spacing-sm);
+    cursor: grab;
+}
+
+.overlay:active {
+    cursor: grabbing;
+}
+
+.removeBtn {
+    pointer-events: auto;
+}
+
+/* React Grid Layout Overrides */
+:global(.react-grid-item.react-grid-placeholder) {
+    background: var(--color-primary) !important;
+    opacity: 0.2 !important;
+    border-radius: var(--radius-lg) !important;
+}
+
+:global(.react-resizable-handle) {
+    background-image: none !important;
+    width: 12px !important;
+    height: 12px !important;
+    right: 4px !important;
+    bottom: 4px !important;
+    border-right: 2px solid var(--color-text-muted);
+    border-bottom: 2px solid var(--color-text-muted);
+    opacity: 0.5;
+    cursor: se-resize;
+}
+
+:global(.react-resizable-handle:hover) {
+    opacity: 1;
+    border-color: var(--color-primary);
+}

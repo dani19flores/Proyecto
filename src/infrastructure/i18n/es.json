@@ -1,0 +1,34 @@
+{
+    "common": {
+        "save": "Guardar",
+        "cancel": "Cancelar",
+        "edit": "Editar",
+        "delete": "Eliminar",
+        "add": "Agregar",
+        "loading": "Cargando..."
+    },
+    "dashboard": {
+        "title": "Panel Financiero",
+        "editMode": "Editar Panel",
+        "saveLayout": "Guardar Diseño",
+        "addWidget": "Agregar Widget",
+        "lineChart": "Gráfico de Líneas",
+        "barChart": "Gráfico de Barras",
+        "pieChart": "Gráfico Circular",
+        "table": "Tabla",
+        "kpi": "Tarjeta KPI"
+    },
+    "metrics": {
+        "revenue": "Ingresos",
+        "expenses": "Gastos",
+        "profit": "Beneficio Neto",
+        "users": "Usuarios Activos"
+    },
+    "settings": {
+        "title": "Configuración",
+        "theme": "Tema",
+        "language": "Idioma",
+        "dark": "Oscuro",
+        "light": "Claro"
+    }
+}

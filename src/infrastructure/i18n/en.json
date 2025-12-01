@@ -1,0 +1,34 @@
+{
+    "common": {
+        "save": "Save",
+        "cancel": "Cancel",
+        "edit": "Edit",
+        "delete": "Delete",
+        "add": "Add",
+        "loading": "Loading..."
+    },
+    "dashboard": {
+        "title": "Financial Dashboard",
+        "editMode": "Edit Dashboard",
+        "saveLayout": "Save Layout",
+        "addWidget": "Add Widget",
+        "lineChart": "Line Chart",
+        "barChart": "Bar Chart",
+        "pieChart": "Pie Chart",
+        "table": "Table",
+        "kpi": "KPI Card"
+    },
+    "metrics": {
+        "revenue": "Revenue",
+        "expenses": "Expenses",
+        "profit": "Net Profit",
+        "users": "Active Users"
+    },
+    "settings": {
+        "title": "Settings",
+        "theme": "Theme",
+        "language": "Language",
+        "dark": "Dark",
+        "light": "Light"
+    }
+}
