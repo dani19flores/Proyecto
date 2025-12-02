@@ -1,4 +1,3 @@
-import React from "react";
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { DashboardPage } from './presentation/pages/DashboardPage';
 import { ReportsPage } from './presentation/pages/ReportsPage';
