@@ -9,7 +9,11 @@
         "refresh": "Actualizar",
         "refreshing": "Actualizando...",
         "error": "Error",
-        "noData": "No hay datos disponibles"
+        "noData": "No hay datos disponibles",
+        "date": "Fecha",
+        "value": "Valor",
+        "metricNotFound": "Métrica no encontrada",
+        "unknownWidget": "Tipo de widget desconocido"
     },
     "navigation": {
         "dashboard": "Panel",
@@ -24,7 +28,8 @@
         "profile": "Perfil de Usuario"
     },
     "dashboard": {
-        "title": "Panel Financiero",
+        "title": "Panel de Criptomonedas",
+        "subtitle": "Métricas de rendimiento de criptomonedas en vivo",
         "editMode": "Editar Panel",
         "saveLayout": "Guardar Diseño",
         "addWidget": "Agregar Widget",
@@ -62,7 +67,11 @@
         "revenue": "Ingresos",
         "expenses": "Gastos",
         "profit": "Beneficio Neto",
-        "users": "Usuarios Activos"
+        "users": "Usuarios Activos",
+        "marketCap": "Cap. de Mercado",
+        "volume24h": "Volumen 24h",
+        "dominance": "Dominancia BTC",
+        "activeCoins": "Monedas Activas"
     },
     "settings": {
         "title": "Configuración",

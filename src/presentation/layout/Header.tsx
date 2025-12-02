@@ -10,7 +10,7 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ theme, onToggleTheme }) => {
-    const { i18n, t } = useTranslation();
+    const { i18n } = useTranslation();
 
     const toggleLanguage = () => {
         const newLang = i18n.language === 'en' ? 'es' : 'en';
@@ -19,7 +19,7 @@ export const Header: React.FC<HeaderProps> = ({ theme, onToggleTheme }) => {
 
     return (
         <header className={styles.header}>
-            <h2 className={styles.title}>{t('dashboard.title')}</h2>
+            <div></div>
             <div className={styles.actions}>
                 <Button variant="ghost" onClick={toggleLanguage} className={styles.iconBtn}>
                     <Globe size={20} />

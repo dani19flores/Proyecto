@@ -9,7 +9,11 @@
         "refresh": "Refresh",
         "refreshing": "Refreshing...",
         "error": "Error",
-        "noData": "No data available"
+        "noData": "No data available",
+        "date": "Date",
+        "value": "Value",
+        "metricNotFound": "Metric not found",
+        "unknownWidget": "Unknown widget type"
     },
     "navigation": {
         "dashboard": "Dashboard",
@@ -24,7 +28,8 @@
         "profile": "User Profile"
     },
     "dashboard": {
-        "title": "Financial Dashboard",
+        "title": "Crypto Dashboard",
+        "subtitle": "Live cryptocurrency performance metrics",
         "editMode": "Edit Dashboard",
         "saveLayout": "Save Layout",
         "addWidget": "Add Widget",
@@ -62,7 +67,11 @@
         "revenue": "Revenue",
         "expenses": "Expenses",
         "profit": "Net Profit",
-        "users": "Active Users"
+        "users": "Active Users",
+        "marketCap": "Market Cap",
+        "volume24h": "24h Volume",
+        "dominance": "BTC Dominance",
+        "activeCoins": "Active Coins"
     },
     "settings": {
         "title": "Settings",

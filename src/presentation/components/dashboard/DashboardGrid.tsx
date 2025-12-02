@@ -1,8 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import GridLayout, { Layout } from 'react-grid-layout';
 import { motion } from 'framer-motion';
 import { Widget } from '../../../domain/models/Widget';
-import { FinancialMetric } from '../../../domain/models/FinancialMetric';
+import { CryptoReport } from '../../../application/slices/reportsSlice';
 import { LineChartWidget } from '../widgets/LineChartWidget';
 import { BarChartWidget } from '../widgets/BarChartWidget';
 import { PieChartWidget } from '../widgets/PieChartWidget';
@@ -14,10 +15,12 @@ import 'react-resizable/css/styles.css';
 
 interface DashboardGridProps {
     widgets: Widget[];
-    metrics: FinancialMetric[];
+    cryptocurrencies: CryptoReport[];
 }
 
-export const DashboardGrid: React.FC<DashboardGridProps> = ({ widgets, metrics }) => {
+export const DashboardGrid: React.FC<DashboardGridProps> = ({ widgets, cryptocurrencies }) => {
+    const { t } = useTranslation();
+
     const generateLayout = (): Layout[] => {
         return widgets.map((widget) => ({
             i: widget.id,
@@ -30,35 +33,55 @@ export const DashboardGrid: React.FC<DashboardGridProps> = ({ widgets, metrics }
         }));
     };
 
+    // Transform crypto data for charts
+    const getChartData = (count: number = 7) => {
+        return cryptocurrencies.slice(0, count).map((crypto) => ({
+            date: crypto.name,
+            value: crypto.currentPrice,
+        }));
+    };
+
+    // Transform crypto data for pie chart
+    const getPieData = () => {
+        return cryptocurrencies.slice(0, 5).map((crypto) => ({
+            name: crypto.symbol,
+            value: crypto.marketCap / 1e9, // Convert to billions
+        }));
+    };
+
+    // Transform crypto data for table
+    const getTableData = () => {
+        return cryptocurrencies.slice(0, 10).map((crypto) => ({
+            date: crypto.name,
+            value: crypto.currentPrice,
+        }));
+    };
+
     const renderWidgetContent = (widget: Widget) => {
-        const metric = metrics.find((m) => m.id === widget.metricId);
-        if (!metric) return <div>Metric not found</div>;
+        if (cryptocurrencies.length === 0) {
+            return <div>{t('common.loading')}</div>;
+        }
 
         switch (widget.type) {
             case 'line-chart':
-                return <LineChartWidget title={widget.title} data={metric.history} />;
+                return <LineChartWidget title={widget.title} data={getChartData()} />;
             case 'bar-chart':
-                return <BarChartWidget title={widget.title} data={metric.history} />;
+                return <BarChartWidget title={widget.title} data={getChartData()} />;
             case 'pie-chart':
-                // For pie chart, we need to transform data
-                const pieData = metric.history.slice(0, 4).map((h) => ({
-                    name: h.date,
-                    value: h.value,
-                }));
-                return <PieChartWidget title={widget.title} data={pieData} />;
+                return <PieChartWidget title={widget.title} data={getPieData()} />;
             case 'table':
                 return (
                     <TableWidget
                         title={widget.title}
-                        data={metric.history}
+                        data={getTableData()}
                         columns={[
-                            { key: 'date', label: 'Date' },
-                            { key: 'value', label: 'Value' },
+                            { key: 'date', label: t('cryptoTable.name') },
+                            { key: 'value', label: t('cryptoTable.price') },
                         ]}
                     />
                 );
             default:
-                return <div>Unknown widget type</div>;
+                return <div>{t('common.unknownWidget')}</div>;
         }
     };
 
