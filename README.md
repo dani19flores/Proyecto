@@ -233,7 +233,6 @@ Full i18n support with **52+ translation keys** in both English and Spanish:
 
 #### Dashboard Slice
 ```typescript
-- widgets: Widget[]
 - editMode: boolean
 - Actions: addWidget, removeWidget, updateWidget, toggleEditMode
 ```
@@ -298,20 +297,5 @@ Proyecto/
 - ✅ Component-based architecture
 - ✅ Internationalization from the start
 - ✅ Responsive and accessible UI
-
----
-
-## 🚧 Future Enhancements
-
-- [ ] User authentication & authorization
-- [ ] Backend API integration
-- [ ] More cryptocurrency exchanges
-- [ ] Advanced charting options
-- [ ] Export data to CSV/PDF
-- [ ] Real-time WebSocket updates
-- [ ] Portfolio tracking
-- [ ] Price alerts & notifications
-- [ ] Historical data analysis
-- [ ] Additional languages
 
 ---
