@@ -52,7 +52,7 @@ export const CryptoTable: React.FC<CryptoTableProps> = ({ cryptocurrencies, load
             <div style={{ overflowX: 'auto' }}>
                 <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                     <thead>
-                        <tr style={{ borderBottom: '2px solid #e5e7eb' }}>
+                        <tr style={{ borderBottom: '2px solid var(--color-border)' }}>
                             <th style={{ padding: '1rem', textAlign: 'left' }}>{t('cryptoTable.rank')}</th>
                             <th style={{ padding: '1rem', textAlign: 'left' }}>{t('cryptoTable.name')}</th>
                             <th style={{ padding: '1rem', textAlign: 'right' }}>{t('cryptoTable.price')}</th>
@@ -66,11 +66,12 @@ export const CryptoTable: React.FC<CryptoTableProps> = ({ cryptocurrencies, load
                             <tr
                                 key={crypto.id}
                                 style={{
-                                    borderBottom: '1px solid #f3f4f6',
+                                    borderBottom: '1px solid var(--color-border)',
                                     transition: 'background-color 0.2s',
+                                    color: 'var(--color-text)',
                                 }}
                                 onMouseEnter={(e) =>
-                                    (e.currentTarget.style.backgroundColor = '#f9fafb')
+                                    (e.currentTarget.style.backgroundColor = 'var(--color-surface-hover)')
                                 }
                                 onMouseLeave={(e) =>
                                     (e.currentTarget.style.backgroundColor = 'transparent')
@@ -82,7 +83,7 @@ export const CryptoTable: React.FC<CryptoTableProps> = ({ cryptocurrencies, load
                                 <td style={{ padding: '1rem' }}>
                                     <div>
                                         <div style={{ fontWeight: 'bold' }}>{crypto.name}</div>
-                                        <div style={{ fontSize: '0.875rem', color: '#64748b' }}>
+                                        <div style={{ fontSize: '0.875rem', color: 'var(--color-text-muted)' }}>
                                             {crypto.symbol}
                                         </div>
                                     </div>
@@ -99,7 +100,7 @@ export const CryptoTable: React.FC<CryptoTableProps> = ({ cryptocurrencies, load
                                                 ? '#22c55e'
                                                 : crypto.trend === 'down'
                                                     ? '#ef4444'
-                                                    : '#64748b',
+                                                    : 'var(--color-text-muted)',
                                     }}
                                 >
                                     <div

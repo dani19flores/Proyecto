@@ -49,7 +49,7 @@ export const ProfilePage: React.FC = () => {
         <div style={{ padding: '2rem' }}>
             {/* Header */}
             <div style={{ marginBottom: '2rem' }}>
-                <h1 style={{ margin: 0, marginBottom: '0.5rem' }}>{t('profile.title')}</h1>
+                <h1 style={{ margin: 0, marginBottom: '0.5rem', color: 'var(--color-text)' }}>{t('profile.title')}</h1>
             </div>
 
             <div
@@ -70,7 +70,7 @@ export const ProfilePage: React.FC = () => {
                                         width: '120px',
                                         height: '120px',
                                         borderRadius: '50%',
-                                        backgroundColor: '#3b82f6',
+                                        backgroundColor: 'var(--color-primary)',
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
@@ -82,14 +82,14 @@ export const ProfilePage: React.FC = () => {
                                 >
                                     {user.avatar}
                                 </div>
-                                <h2 style={{ margin: 0, marginBottom: '0.5rem' }}>{user.fullName}</h2>
-                                <p style={{ margin: 0, color: '#64748b', fontSize: '14px' }}>
+                                <h2 style={{ margin: 0, marginBottom: '0.5rem', color: 'var(--color-text)' }}>{user.fullName}</h2>
+                                <p style={{ margin: 0, color: 'var(--color-text-muted)', fontSize: '14px' }}>
                                     {t('user.role')}
                                     {user.verified && (
                                         <CheckCircle
                                             size={16}
                                             style={{
-                                                color: '#22c55e',
+                                                color: 'var(--color-success)',
                                                 marginLeft: '0.5rem',
                                                 display: 'inline',
                                                 verticalAlign: 'middle',
@@ -105,7 +105,7 @@ export const ProfilePage: React.FC = () => {
                                     fontSize: '16px',
                                     fontWeight: 'bold',
                                     marginBottom: '1rem',
-                                    color: '#0f172a',
+                                    color: 'var(--color-text)',
                                 }}
                             >
                                 {t('profile.personalInfo')}
@@ -113,48 +113,48 @@ export const ProfilePage: React.FC = () => {
 
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                                    <Mail size={20} style={{ color: '#64748b' }} />
+                                    <Mail size={20} style={{ color: 'var(--color-text-muted)' }} />
                                     <div>
-                                        <p style={{ margin: 0, fontSize: '12px', color: '#64748b' }}>
+                                        <p style={{ margin: 0, fontSize: '12px', color: 'var(--color-text-muted)' }}>
                                             {t('profile.email')}
                                         </p>
-                                        <p style={{ margin: 0, fontSize: '14px', fontWeight: '500' }}>
+                                        <p style={{ margin: 0, fontSize: '14px', fontWeight: '500', color: 'var(--color-text)' }}>
                                             {user.email}
                                         </p>
                                     </div>
                                 </div>
 
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                                    <Phone size={20} style={{ color: '#64748b' }} />
+                                    <Phone size={20} style={{ color: 'var(--color-text-muted)' }} />
                                     <div>
-                                        <p style={{ margin: 0, fontSize: '12px', color: '#64748b' }}>
+                                        <p style={{ margin: 0, fontSize: '12px', color: 'var(--color-text-muted)' }}>
                                             {t('profile.phone')}
                                         </p>
-                                        <p style={{ margin: 0, fontSize: '14px', fontWeight: '500' }}>
+                                        <p style={{ margin: 0, fontSize: '14px', fontWeight: '500', color: 'var(--color-text)' }}>
                                             {user.phone}
                                         </p>
                                     </div>
                                 </div>
 
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                                    <MapPin size={20} style={{ color: '#64748b' }} />
+                                    <MapPin size={20} style={{ color: 'var(--color-text-muted)' }} />
                                     <div>
-                                        <p style={{ margin: 0, fontSize: '12px', color: '#64748b' }}>
+                                        <p style={{ margin: 0, fontSize: '12px', color: 'var(--color-text-muted)' }}>
                                             {t('profile.location')}
                                         </p>
-                                        <p style={{ margin: 0, fontSize: '14px', fontWeight: '500' }}>
+                                        <p style={{ margin: 0, fontSize: '14px', fontWeight: '500', color: 'var(--color-text)' }}>
                                             {user.location}
                                         </p>
                                     </div>
                                 </div>
 
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                                    <Calendar size={20} style={{ color: '#64748b' }} />
+                                    <Calendar size={20} style={{ color: 'var(--color-text-muted)' }} />
                                     <div>
-                                        <p style={{ margin: 0, fontSize: '12px', color: '#64748b' }}>
+                                        <p style={{ margin: 0, fontSize: '12px', color: 'var(--color-text-muted)' }}>
                                             {t('profile.joinedDate')}
                                         </p>
-                                        <p style={{ margin: 0, fontSize: '14px', fontWeight: '500' }}>
+                                        <p style={{ margin: 0, fontSize: '14px', fontWeight: '500', color: 'var(--color-text)' }}>
                                             {user.joinedDate}
                                         </p>
                                     </div>
@@ -168,12 +168,12 @@ export const ProfilePage: React.FC = () => {
                                         fontSize: '14px',
                                         fontWeight: 'bold',
                                         marginBottom: '0.5rem',
-                                        color: '#64748b',
+                                        color: 'var(--color-text-muted)',
                                     }}
                                 >
                                     {t('profile.bio')}
                                 </h4>
-                                <p style={{ margin: 0, fontSize: '14px', color: '#64748b', lineHeight: '1.6' }}>
+                                <p style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-muted)', lineHeight: '1.6' }}>
                                     {user.bio}
                                 </p>
                             </div>
@@ -207,7 +207,7 @@ export const ProfilePage: React.FC = () => {
                                     fontSize: '18px',
                                     fontWeight: 'bold',
                                     marginBottom: '1.5rem',
-                                    color: '#0f172a',
+                                    color: 'var(--color-text)',
                                 }}
                             >
                                 {t('profile.accountStats')}
@@ -221,7 +221,7 @@ export const ProfilePage: React.FC = () => {
                                 }}
                             >
                                 <div>
-                                    <p style={{ margin: 0, fontSize: '12px', color: '#64748b' }}>
+                                    <p style={{ margin: 0, fontSize: '12px', color: 'var(--color-text-muted)' }}>
                                         {t('profile.totalInvestments')}
                                     </p>
                                     <p
@@ -229,7 +229,7 @@ export const ProfilePage: React.FC = () => {
                                             margin: 0,
                                             fontSize: '24px',
                                             fontWeight: 'bold',
-                                            color: '#0f172a',
+                                            color: 'var(--color-text)',
                                         }}
                                     >
                                         {user.stats.totalInvestments}
@@ -237,7 +237,7 @@ export const ProfilePage: React.FC = () => {
                                 </div>
 
                                 <div>
-                                    <p style={{ margin: 0, fontSize: '12px', color: '#64748b' }}>
+                                    <p style={{ margin: 0, fontSize: '12px', color: 'var(--color-text-muted)' }}>
                                         {t('profile.activePortfolios')}
                                     </p>
                                     <p
@@ -245,7 +245,7 @@ export const ProfilePage: React.FC = () => {
                                             margin: 0,
                                             fontSize: '24px',
                                             fontWeight: 'bold',
-                                            color: '#0f172a',
+                                            color: 'var(--color-text)',
                                         }}
                                     >
                                         {user.stats.activePortfolios}
@@ -253,7 +253,7 @@ export const ProfilePage: React.FC = () => {
                                 </div>
 
                                 <div>
-                                    <p style={{ margin: 0, fontSize: '12px', color: '#64748b' }}>
+                                    <p style={{ margin: 0, fontSize: '12px', color: 'var(--color-text-muted)' }}>
                                         {t('profile.totalProfit')}
                                     </p>
                                     <p
@@ -261,7 +261,7 @@ export const ProfilePage: React.FC = () => {
                                             margin: 0,
                                             fontSize: '24px',
                                             fontWeight: 'bold',
-                                            color: '#22c55e',
+                                            color: 'var(--color-success)',
                                         }}
                                     >
                                         {user.stats.totalProfit}
@@ -269,7 +269,7 @@ export const ProfilePage: React.FC = () => {
                                 </div>
 
                                 <div>
-                                    <p style={{ margin: 0, fontSize: '12px', color: '#64748b' }}>
+                                    <p style={{ margin: 0, fontSize: '12px', color: 'var(--color-text-muted)' }}>
                                         {t('profile.successRate')}
                                     </p>
                                     <p
@@ -277,7 +277,7 @@ export const ProfilePage: React.FC = () => {
                                             margin: 0,
                                             fontSize: '24px',
                                             fontWeight: 'bold',
-                                            color: '#0f172a',
+                                            color: 'var(--color-text)',
                                         }}
                                     >
                                         {user.stats.successRate}
@@ -295,7 +295,7 @@ export const ProfilePage: React.FC = () => {
                                     fontSize: '18px',
                                     fontWeight: 'bold',
                                     marginBottom: '1.5rem',
-                                    color: '#0f172a',
+                                    color: 'var(--color-text)',
                                 }}
                             >
                                 {t('profile.recentActivity')}
@@ -310,7 +310,7 @@ export const ProfilePage: React.FC = () => {
                                             alignItems: 'center',
                                             gap: '1rem',
                                             padding: '1rem',
-                                            backgroundColor: '#f8fafc',
+                                            backgroundColor: 'var(--color-background)',
                                             borderRadius: '8px',
                                         }}
                                     >
@@ -319,7 +319,7 @@ export const ProfilePage: React.FC = () => {
                                                 width: '40px',
                                                 height: '40px',
                                                 borderRadius: '50%',
-                                                backgroundColor: '#3b82f6',
+                                                backgroundColor: 'var(--color-primary)',
                                                 display: 'flex',
                                                 alignItems: 'center',
                                                 justifyContent: 'center',
@@ -329,10 +329,10 @@ export const ProfilePage: React.FC = () => {
                                             <Activity size={20} style={{ color: 'white' }} />
                                         </div>
                                         <div style={{ flex: 1 }}>
-                                            <p style={{ margin: 0, fontSize: '14px', fontWeight: '500' }}>
+                                            <p style={{ margin: 0, fontSize: '14px', fontWeight: '500', color: 'var(--color-text)' }}>
                                                 {t(`profile.${activity.action}`)}
                                             </p>
-                                            <p style={{ margin: 0, fontSize: '12px', color: '#64748b' }}>
+                                            <p style={{ margin: 0, fontSize: '12px', color: 'var(--color-text-muted)' }}>
                                                 {activity.time}
                                             </p>
                                         </div>
@@ -353,15 +353,15 @@ export const ProfilePage: React.FC = () => {
                                 }}
                             >
                                 <div>
-                                    <p style={{ margin: 0, fontSize: '12px', color: '#64748b' }}>
+                                    <p style={{ margin: 0, fontSize: '12px', color: 'var(--color-text-muted)' }}>
                                         {t('profile.lastLogin')}
                                     </p>
-                                    <p style={{ margin: 0, fontSize: '14px', fontWeight: '500' }}>
+                                    <p style={{ margin: 0, fontSize: '14px', fontWeight: '500', color: 'var(--color-text)' }}>
                                         {user.lastLogin}
                                     </p>
                                 </div>
                                 <div style={{ textAlign: 'right' }}>
-                                    <p style={{ margin: 0, fontSize: '12px', color: '#64748b' }}>
+                                    <p style={{ margin: 0, fontSize: '12px', color: 'var(--color-text-muted)' }}>
                                         {t('profile.accountStatus')}
                                     </p>
                                     <p
@@ -369,7 +369,7 @@ export const ProfilePage: React.FC = () => {
                                             margin: 0,
                                             fontSize: '14px',
                                             fontWeight: '500',
-                                            color: '#22c55e',
+                                            color: 'var(--color-success)',
                                         }}
                                     >
                                         {user.accountStatus}

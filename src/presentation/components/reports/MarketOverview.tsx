@@ -88,11 +88,11 @@ export const MarketOverview: React.FC<MarketOverviewProps> = ({ cryptocurrencies
                                 >
                                     <Icon size={20} style={{ color: stat.color }} />
                                 </div>
-                                <h3 style={{ margin: 0, fontSize: '0.875rem', color: '#64748b' }}>
+                                <h3 style={{ margin: 0, fontSize: '0.875rem', color: 'var(--color-text-muted)' }}>
                                     {stat.label}
                                 </h3>
                             </div>
-                            <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#0f172a' }}>
+                            <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--color-text)' }}>
                                 {stat.value}
                             </div>
                         </div>
