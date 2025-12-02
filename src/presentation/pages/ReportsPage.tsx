@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { RootState, AppDispatch } from '../../application/store';
 import { fetchCryptoReports } from '../../application/slices/reportsSlice';
 import { CryptoTable } from '../components/reports/CryptoTable';
@@ -8,6 +9,7 @@ import { RefreshCw } from 'lucide-react';
 import { Button } from '../components/common/Button';
 
 export const ReportsPage: React.FC = () => {
+    const { t } = useTranslation();
     const dispatch = useDispatch<AppDispatch>();
     const { cryptocurrencies, loading, error, lastUpdated } = useSelector(
         (state: RootState) => state.reports
@@ -24,7 +26,7 @@ export const ReportsPage: React.FC = () => {
     if (loading && cryptocurrencies.length === 0) {
         return (
             <div style={{ padding: '2rem', textAlign: 'center' }}>
-                <h2>Loading Reports...</h2>
+                <h2>{t('reports.loadingReports')}</h2>
             </div>
         );
     }
@@ -41,19 +43,19 @@ export const ReportsPage: React.FC = () => {
                 }}
             >
                 <div>
-                    <h1 style={{ margin: 0, marginBottom: '0.5rem' }}>Financial Reports</h1>
+                    <h1 style={{ margin: 0, marginBottom: '0.5rem' }}>{t('reports.title')}</h1>
                     <p style={{ margin: 0, color: '#666' }}>
-                        Live cryptocurrency market data
+                        {t('reports.subtitle')}
                         {lastUpdated && (
                             <span style={{ marginLeft: '1rem', fontSize: '0.9em' }}>
-                                Last updated: {new Date(lastUpdated).toLocaleTimeString()}
+                                {t('reports.lastUpdated')}: {new Date(lastUpdated).toLocaleTimeString()}
                             </span>
                         )}
                     </p>
                 </div>
                 <Button onClick={handleRefresh} disabled={loading} size="md" variant="secondary">
                     <RefreshCw size={16} style={{ marginRight: '0.5rem' }} />
-                    {loading ? 'Refreshing...' : 'Refresh Data'}
+                    {loading ? t('common.refreshing') : t('reports.refreshData')}
                 </Button>
             </div>
 
@@ -69,7 +71,7 @@ export const ReportsPage: React.FC = () => {
                         color: '#c33',
                     }}
                 >
-                    <strong>Error:</strong> {error}
+                    <strong>{t('common.error')}:</strong> {error}
                 </div>
             )}
 
@@ -78,7 +80,7 @@ export const ReportsPage: React.FC = () => {
 
             {/* Crypto Table */}
             <div style={{ marginTop: '2rem' }}>
-                <h2 style={{ marginBottom: '1rem' }}>Top Cryptocurrencies</h2>
+                <h2 style={{ marginBottom: '1rem' }}>{t('reports.topCryptocurrencies')}</h2>
                 <CryptoTable cryptocurrencies={cryptocurrencies} loading={loading} />
             </div>
         </div>

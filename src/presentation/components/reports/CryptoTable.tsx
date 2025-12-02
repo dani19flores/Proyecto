@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { CryptoReport } from '../../../application/slices/reportsSlice';
 import { ArrowUp, ArrowDown, Minus } from 'lucide-react';
 import { Card } from '../common/Card';
@@ -9,6 +10,8 @@ interface CryptoTableProps {
 }
 
 export const CryptoTable: React.FC<CryptoTableProps> = ({ cryptocurrencies, loading }) => {
+    const { t } = useTranslation();
+
     const formatCurrency = (value: number) => {
         return new Intl.NumberFormat('en-US', {
             style: 'currency',
@@ -37,11 +40,11 @@ export const CryptoTable: React.FC<CryptoTableProps> = ({ cryptocurrencies, load
     };
 
     if (loading && cryptocurrencies.length === 0) {
-        return <div style={{ textAlign: 'center', padding: '2rem' }}>Loading...</div>;
+        return <div style={{ textAlign: 'center', padding: '2rem' }}>{t('common.loading')}</div>;
     }
 
     if (cryptocurrencies.length === 0) {
-        return <div style={{ textAlign: 'center', padding: '2rem' }}>No data available</div>;
+        return <div style={{ textAlign: 'center', padding: '2rem' }}>{t('common.noData')}</div>;
     }
 
     return (
@@ -50,12 +53,12 @@ export const CryptoTable: React.FC<CryptoTableProps> = ({ cryptocurrencies, load
                 <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                     <thead>
                         <tr style={{ borderBottom: '2px solid #e5e7eb' }}>
-                            <th style={{ padding: '1rem', textAlign: 'left' }}>#</th>
-                            <th style={{ padding: '1rem', textAlign: 'left' }}>Name</th>
-                            <th style={{ padding: '1rem', textAlign: 'right' }}>Price</th>
-                            <th style={{ padding: '1rem', textAlign: 'right' }}>24h Change</th>
-                            <th style={{ padding: '1rem', textAlign: 'right' }}>Market Cap</th>
-                            <th style={{ padding: '1rem', textAlign: 'right' }}>Volume (24h)</th>
+                            <th style={{ padding: '1rem', textAlign: 'left' }}>{t('cryptoTable.rank')}</th>
+                            <th style={{ padding: '1rem', textAlign: 'left' }}>{t('cryptoTable.name')}</th>
+                            <th style={{ padding: '1rem', textAlign: 'right' }}>{t('cryptoTable.price')}</th>
+                            <th style={{ padding: '1rem', textAlign: 'right' }}>{t('cryptoTable.change24h')}</th>
+                            <th style={{ padding: '1rem', textAlign: 'right' }}>{t('cryptoTable.marketCap')}</th>
+                            <th style={{ padding: '1rem', textAlign: 'right' }}>{t('cryptoTable.volume24h')}</th>
                         </tr>
                     </thead>
                     <tbody>

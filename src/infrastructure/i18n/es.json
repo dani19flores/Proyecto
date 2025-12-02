@@ -5,7 +5,23 @@
         "edit": "Editar",
         "delete": "Eliminar",
         "add": "Agregar",
-        "loading": "Cargando..."
+        "loading": "Cargando...",
+        "refresh": "Actualizar",
+        "refreshing": "Actualizando...",
+        "error": "Error",
+        "noData": "No hay datos disponibles"
+    },
+    "navigation": {
+        "dashboard": "Panel",
+        "reports": "Reportes",
+        "settings": "Configuración",
+        "profile": "Perfil",
+        "appName": "FinDash"
+    },
+    "user": {
+        "name": "Nombre de Usuario",
+        "role": "Administrador",
+        "profile": "Perfil de Usuario"
     },
     "dashboard": {
         "title": "Panel Financiero",
@@ -17,6 +33,30 @@
         "pieChart": "Gráfico Circular",
         "table": "Tabla",
         "kpi": "Tarjeta KPI"
+    },
+    "reports": {
+        "title": "Reportes Financieros",
+        "subtitle": "Datos del mercado de criptomonedas en tiempo real",
+        "loadingReports": "Cargando Reportes...",
+        "lastUpdated": "Última actualización",
+        "refreshData": "Actualizar Datos",
+        "topCryptocurrencies": "Top Criptomonedas",
+        "marketOverview": "Resumen del Mercado"
+    },
+    "cryptoTable": {
+        "rank": "#",
+        "name": "Nombre",
+        "price": "Precio",
+        "change24h": "Cambio 24h",
+        "marketCap": "Cap. de Mercado",
+        "volume24h": "Volumen (24h)"
+    },
+    "marketStats": {
+        "totalMarketCap": "Capitalización Total de Mercado",
+        "totalVolume": "Volumen Total (24h)",
+        "averageChange": "Cambio Promedio",
+        "gainers": "Ganadores",
+        "gainersOf": "de"
     },
     "metrics": {
         "revenue": "Ingresos",

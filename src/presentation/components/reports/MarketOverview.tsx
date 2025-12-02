@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { CryptoReport } from '../../../application/slices/reportsSlice';
 import { Card } from '../common/Card';
 import { TrendingUp, DollarSign, Activity, Coins } from 'lucide-react';
@@ -8,6 +9,8 @@ interface MarketOverviewProps {
 }
 
 export const MarketOverview: React.FC<MarketOverviewProps> = ({ cryptocurrencies }) => {
+    const { t } = useTranslation();
+
     const totalMarketCap = cryptocurrencies.reduce((sum, crypto) => sum + crypto.marketCap, 0);
     const totalVolume = cryptocurrencies.reduce((sum, crypto) => sum + crypto.volume, 0);
     const avgChange = cryptocurrencies.length > 0
@@ -27,26 +30,26 @@ export const MarketOverview: React.FC<MarketOverviewProps> = ({ cryptocurrencies
 
     const stats = [
         {
-            label: 'Total Market Cap',
+            label: t('marketStats.totalMarketCap'),
             value: formatNumber(totalMarketCap),
             icon: DollarSign,
             color: '#3b82f6',
         },
         {
-            label: 'Total Volume (24h)',
+            label: t('marketStats.totalVolume'),
             value: formatNumber(totalVolume),
             icon: Activity,
             color: '#8b5cf6',
         },
         {
-            label: 'Average Change',
+            label: t('marketStats.averageChange'),
             value: `${avgChange >= 0 ? '+' : ''}${avgChange.toFixed(2)}%`,
             icon: TrendingUp,
             color: avgChange >= 0 ? '#22c55e' : '#ef4444',
         },
         {
-            label: 'Gainers',
-            value: `${gainers} of ${cryptocurrencies.length}`,
+            label: t('marketStats.gainers'),
+            value: `${gainers} ${t('marketStats.gainersOf')} ${cryptocurrencies.length}`,
             icon: Coins,
             color: '#f59e0b',
         },

@@ -15,17 +15,17 @@ export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
     const location = useLocation();
 
     const menuItems = [
-        { icon: LayoutDashboard, label: t('dashboard.title'), path: '/dashboard' },
-        { icon: FileText, label: 'Reports', path: '/reports' },
-        { icon: Settings, label: t('settings.title'), path: '/settings' },
-        { icon: User, label: 'Profile', path: '/profile' },
+        { icon: LayoutDashboard, label: t('navigation.dashboard'), path: '/dashboard' },
+        { icon: FileText, label: t('navigation.reports'), path: '/reports' },
+        { icon: Settings, label: t('navigation.settings'), path: '/settings' },
+        { icon: User, label: t('navigation.profile'), path: '/profile' },
     ];
 
     return (
         <aside className={clsx(styles.sidebar, className)}>
             <div className={styles.logo}>
                 <div className={styles.logoIcon} />
-                <span className={styles.logoText}>FinDash</span>
+                <span className={styles.logoText}>{t('navigation.appName')}</span>
             </div>
 
             <nav className={styles.nav}>
@@ -45,8 +45,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
                 <div className={styles.userProfile}>
                     <div className={styles.avatar}>U</div>
                     <div className={styles.userInfo}>
-                        <span className={styles.userName}>User Name</span>
-                        <span className={styles.userRole}>Admin</span>
+                        <span className={styles.userName}>{t('user.name')}</span>
+                        <span className={styles.userRole}>{t('user.role')}</span>
                     </div>
                 </div>
             </div>

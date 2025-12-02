@@ -5,7 +5,23 @@
         "edit": "Edit",
         "delete": "Delete",
         "add": "Add",
-        "loading": "Loading..."
+        "loading": "Loading...",
+        "refresh": "Refresh",
+        "refreshing": "Refreshing...",
+        "error": "Error",
+        "noData": "No data available"
+    },
+    "navigation": {
+        "dashboard": "Dashboard",
+        "reports": "Reports",
+        "settings": "Settings",
+        "profile": "Profile",
+        "appName": "FinDash"
+    },
+    "user": {
+        "name": "User Name",
+        "role": "Admin",
+        "profile": "User Profile"
     },
     "dashboard": {
         "title": "Financial Dashboard",
@@ -17,6 +33,30 @@
         "pieChart": "Pie Chart",
         "table": "Table",
         "kpi": "KPI Card"
+    },
+    "reports": {
+        "title": "Financial Reports",
+        "subtitle": "Live cryptocurrency market data",
+        "loadingReports": "Loading Reports...",
+        "lastUpdated": "Last updated",
+        "refreshData": "Refresh Data",
+        "topCryptocurrencies": "Top Cryptocurrencies",
+        "marketOverview": "Market Overview"
+    },
+    "cryptoTable": {
+        "rank": "#",
+        "name": "Name",
+        "price": "Price",
+        "change24h": "24h Change",
+        "marketCap": "Market Cap",
+        "volume24h": "Volume (24h)"
+    },
+    "marketStats": {
+        "totalMarketCap": "Total Market Cap",
+        "totalVolume": "Total Volume (24h)",
+        "averageChange": "Average Change",
+        "gainers": "Gainers",
+        "gainersOf": "of"
     },
     "metrics": {
         "revenue": "Revenue",
