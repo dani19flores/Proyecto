@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { DashboardPage } from './presentation/pages/DashboardPage';
 import { ReportsPage } from './presentation/pages/ReportsPage';
 import { SettingsPage } from './presentation/pages/SettingsPage';
+import { ProfilePage } from './presentation/pages/ProfilePage';
 import { MainLayout } from './presentation/layout/MainLayout';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/reports" element={<ReportsPage />} />
           <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
       </MainLayout>
     </Router>

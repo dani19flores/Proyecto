@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import GridLayout, { Layout } from 'react-grid-layout';
 import { motion } from 'framer-motion';
@@ -20,6 +20,20 @@ interface DashboardGridProps {
 
 export const DashboardGrid: React.FC<DashboardGridProps> = ({ widgets, cryptocurrencies }) => {
     const { t } = useTranslation();
+    const containerRef = useRef<HTMLDivElement>(null);
+    const [containerWidth, setContainerWidth] = useState(1200);
+
+    useEffect(() => {
+        const updateWidth = () => {
+            if (containerRef.current) {
+                setContainerWidth(containerRef.current.offsetWidth);
+            }
+        };
+
+        updateWidth();
+        window.addEventListener('resize', updateWidth);
+        return () => window.removeEventListener('resize', updateWidth);
+    }, []);
 
     const generateLayout = (): Layout[] => {
         return widgets.map((widget) => ({
@@ -86,13 +100,13 @@ export const DashboardGrid: React.FC<DashboardGridProps> = ({ widgets, cryptocur
     };
 
     return (
-        <div className={styles.gridContainer}>
+        <div ref={containerRef} className={styles.gridContainer}>
             <GridLayout
                 className="layout"
                 layout={generateLayout()}
                 cols={12}
-                rowHeight={60}
-                width={1200}
+                rowHeight={80}
+                width={containerWidth}
                 isDraggable={false}
                 isResizable={false}
             >
