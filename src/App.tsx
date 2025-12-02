@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { DashboardPage } from './presentation/pages/DashboardPage';
+import { ReportsPage } from './presentation/pages/ReportsPage';
 import { SettingsPage } from './presentation/pages/SettingsPage';
 import { MainLayout } from './presentation/layout/MainLayout';
 
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/reports" element={<ReportsPage />} />
           <Route path="/settings" element={<SettingsPage />} />
         </Routes>
       </MainLayout>
